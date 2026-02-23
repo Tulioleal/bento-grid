@@ -138,52 +138,28 @@ body {
   background-color: var(--yellow);
 }
 
-.bento > .card > h1,
-.bento > .card > h2,
-.bento > .card > h3 {
+.card h1,
+.card h2,
+.card h3 {
   font-weight: 500;
   line-height: 1;
-  margin-bottom: 1rem;
 }
 
-.bento > .card > h1 {
+.card h1 {
   text-align: center;
-  font-size: 10vw;
+  font-size: clamp(2.5rem, 10vw, 4rem);
 }
 
-
-.bento > .card > h2 {
-  font-size: 5vw;
+.card h2 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
-
-.bento > .card > h3 {
-  font-size: 4vw;
-  margin-bottom: 0;
+.card h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
-
-.bento > .card > p {
-  font-size: 3vw;
-}
-
-/* ============ Desktop font sizing ============ */
-@media (min-width: 768px) {
-  .bento > .card > h1 {
-    font-size: min(4vw, 4rem);
-  }
-
-  .bento > .card > h2 {
-    font-size: min(2.5vw, 2.5rem);
-  }
-
-  .bento > .card > h3 {
-    font-size: min(2vw, 2rem);
-  }
-
-  .bento > .card > p {
-    font-size: min(1.25vw, 1.25rem);
-  }
+.card p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 .bento > .card > img {
@@ -266,6 +242,10 @@ body {
   position: relative;
 }
 
+.bento > .card-timing > p {
+  text-align: center;
+}
+
 .bento > .card-timing > img {
   width: 100%;
   max-width: 300px;
@@ -282,6 +262,10 @@ body {
     width: 185%;
     max-width: none;
     align-self: flex-start;
+  }
+
+  .bento > .card-timing > p {
+    text-align: left;
   }
 }
 
@@ -363,6 +347,10 @@ body {
 /* AI Card */
 .bento > .card-ai {
   justify-content: space-between;
+}
+
+.bento > .card-ai > h2 {
+  margin-bottom: 1.5rem;
 }
 
 .bento > .card-ai > img {
