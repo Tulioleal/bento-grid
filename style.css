@@ -1,0 +1,377 @@
+/* ============ Custom Properties ============ */
+:root {
+  --lilac: hsl(254, 88%, 90%);
+  --purple: hsl(256, 67%, 59%);
+  --lightyellow: hsl(31, 66%, 93%);
+  --yellow: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+/* ============ Font ============ */
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 400 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============ Reset ============ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============ Base ============ */
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  background-color: #f5f3f0;
+}
+
+/* ============ Grid Container ============ */
+.bento {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* Mobile: single column */
+  grid-template-areas:
+    "hero"
+    "accounts"
+    "schedule"
+    "timing"
+    "followers"
+    "growth"
+    "create"
+    "ai";
+}
+
+/* ============ Grid Cards ============ */
+.card-hero      { grid-area: hero; }
+.card-accounts  { grid-area: accounts; }
+.card-schedule  { grid-area: schedule; }
+.card-timing    { grid-area: timing; }
+.card-followers { grid-area: followers; }
+.card-growth    { grid-area: growth; }
+.card-create    { grid-area: create; }
+.card-ai        { grid-area: ai; }
+
+/* ============ Desktop Layout ============ */
+@media (min-width: 768px) {
+  .bento {
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "create   hero      hero      timing"
+      "create   hero      hero      timing"
+      "create   hero      hero      timing"
+      "create   hero      hero      timing"
+      "create   accounts  schedule  timing"
+      "ai       accounts  schedule  timing"
+      "ai       accounts  schedule  timing"
+      "ai       growth    followers followers"
+      "ai       growth    followers followers"
+      "ai       growth    followers followers";
+  }
+}
+
+/* ============ Card Styles ============ */
+.bento > .card {
+  background-color: var(--white);
+  border-radius: 8px;
+  min-height: 100px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .bento > .card {
+    padding: 1.5rem;
+  }
+}
+
+.bento > .horizontal {
+  flex-direction: row;
+  text-align: left;
+}
+
+.bento > .center {
+  justify-content: center;
+}
+
+.bento > .purple {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.bento > .lilac {
+  background-color: var(--lilac);
+}
+
+.bento > .lightyellow {
+  background-color: var(--lightyellow);
+}
+
+.bento > .yellow {
+  background-color: var(--yellow);
+}
+
+.bento > .card > h1,
+.bento > .card > h2,
+.bento > .card > h3 {
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.bento > .card > h1 {
+  text-align: center;
+  font-size: 10vw;
+}
+
+
+.bento > .card > h2 {
+  font-size: 5vw;
+}
+
+
+.bento > .card > h3 {
+  font-size: 4vw;
+  margin-bottom: 0;
+}
+
+
+.bento > .card > p {
+  font-size: 3vw;
+}
+
+/* ============ Desktop font sizing ============ */
+@media (min-width: 768px) {
+  .bento > .card > h1 {
+    font-size: min(4vw, 4rem);
+  }
+
+  .bento > .card > h2 {
+    font-size: min(2.5vw, 2.5rem);
+  }
+
+  .bento > .card > h3 {
+    font-size: min(2vw, 2rem);
+  }
+
+  .bento > .card > p {
+    font-size: min(1.25vw, 1.25rem);
+  }
+}
+
+.bento > .card > img {
+  overflow: hidden;
+}
+
+/* ============ Specific Card Styles ============ */
+
+/* Hero Card */
+  .bento > .card-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .bento > .card-hero > h1 > span {
+    color: var(--yellow);
+  }
+
+  .bento > .card-hero > img {
+    max-width: 50%;
+  }
+
+/* ============ Hero Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-hero > img {
+    max-width: 35%;
+  }
+}
+
+/* Accounts Card */
+.bento > .card-accounts {
+  gap: .5rem;
+}
+
+.bento > .card-accounts > img {
+  align-self: center;
+  max-width: 80%;
+}
+
+/* ============ Accounts Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-accounts {
+    gap: 1.5rem;
+  }
+  .bento > .card-accounts > img {
+    align-self: flex-start;
+    max-width: 150%;
+  }
+}
+
+/* Schedule Card */
+.bento > .card-schedule {
+  gap: 1rem;
+  text-align: center;
+}
+
+.bento > .card-schedule > img {
+  width: 50%;
+  margin-bottom: -100px;
+}
+
+/* ============ Schedule Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-schedule {
+    text-align: left;
+    position: relative;
+  }
+
+  .bento > .card-schedule > img {
+    width: 80%;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: -25%;
+  }
+}
+
+/* Timing Card */
+.bento > .card-timing {
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.bento > .card-timing > img {
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
+}
+
+/* ============ Timing Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-timing {
+    padding: 1.5rem 2rem;
+  }
+
+  .bento > .card-timing > img {
+    width: 185%;
+    max-width: none;
+    align-self: flex-start;
+  }
+}
+
+/* Followers Card */
+.bento > .card-followers {
+  gap: .5rem;
+}
+
+.bento > .card-followers > h2 {
+  margin-bottom: 0;
+}
+
+/* ============ Followers Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-followers {
+    gap: 1.5rem;
+  }
+}
+
+/* Growth Card */
+.bento > .card-growth {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bento > .card-growth > h2 {
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.bento > .card-growth > img {
+  margin-top: 1rem;
+  max-width: 50%;
+}
+
+/* ============ Growth Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-growth {
+    align-items: flex-start;
+  }
+
+  .bento > .card-growth > h2 {
+    font-size: 4rem;
+  }
+
+  .bento > .card-growth > img {
+    margin-top: 2rem;
+  }
+}
+
+/* Create Card */
+.bento > .card-create {
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.bento > .card-create > h2 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.bento > .card-create > h2 > span {
+  color: var(--purple);
+}
+
+.bento > .card-create > img {
+  max-width: 50%;
+}
+
+/* ============ Create Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-create > h2 {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+/* AI Card */
+.bento > .card-ai {
+  justify-content: space-between;
+}
+
+.bento > .card-ai > img {
+  max-width: 66%;
+}
+
+/* ============ AI Card desktop ============ */
+@media (min-width: 768px) {
+  .bento > .card-ai > img {
+    max-width: 100%;
+  }
+}
