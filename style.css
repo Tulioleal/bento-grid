@@ -6,6 +6,7 @@
   --yellow: hsl(39, 100%, 71%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 7%);
+  --background: hsl(36, 20%, 95%);
 }
 
 /* ============ Font ============ */
@@ -41,8 +42,8 @@ img {
 /* ============ Base ============ */
 body {
   font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  background-color: #f5f3f0;
+  font-size: 1rem;
+  background-color: var(--background);
 }
 
 /* ============ Grid Container ============ */
